@@ -15,13 +15,13 @@ module OmniAuth
         resource: 'https://graph.windows.net/'
       }
 
-      uid { raw_info["objectId"] }
+      uid { raw_info["object_id"] }
 
       info do
         {
-          'email' => raw_info["userPrincipalName"],
-          'name' => [raw_info["givenName"], raw_info["surname"]].join(' '),
-          'nickname' => raw_info["displayName"]
+          'email' => raw_info["user_principal_name"],
+          'name' => [raw_info["given_name"], raw_info["surname"]].join(' '),
+          'nickname' => raw_info["display_name"]
         }
       end
 
